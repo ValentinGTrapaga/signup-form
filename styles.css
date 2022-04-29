@@ -1,9 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Padauk&family=Poppins:wght@400;600&display=swap');
+:root {
+    --side-div-text: rgb(255, 255, 255);
+    --side-div-title: rgba(250, 133, 0, 0.878);
+    --error: rgb(202, 0, 0);
+    --approved: rgb(5, 137, 0);
+    --blank-height: 25vh;
+    --logo-height: 15vh;
+    --author-height: 5vh;
+    --main-background: rgb(250, 250, 250);
+}
+
+/* RESET CSS */
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: rgb(41, 41, 41);
     margin: 0px;
+    padding: 0px;
+}
+
+*:focus {
+    text-decoration: none;
+    border: none;
 }
 
 #container {
@@ -21,9 +40,35 @@ body {
 }
 
 aside {
-    width: 40%;
+    width: 80%;
+    height: 100vh;
     background: url(./side-background.jpg) center no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo {
+    font-family: 'Gochi Hand', cursive;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: var(--logo-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#logo > h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--side-div-title);
+}
+
+.blank {
+    height: var(--blank-height);
+}
+
+.blank-2 {
+    height: calc(100vh - var(--blank-height) - var(--logo-height) - calc(var(--author-height) - 0.5vh));
 }
 
 a {
@@ -33,11 +78,141 @@ a {
 
 a:visited {
     text-decoration: none;
-    color: black;
+    color: var(--side-div-text);
 }
 
 .img-author {
     text-decoration: underline;
-    color: black;
+    color: var(--side-div-text);
 }
 
+.author-div {
+    background-color: rgba(0, 0, 0, 0.6 );
+    color: var(--side-div-text);
+    bottom: 0px;
+    height: var(--author-height);
+    display: flex;
+    justify-content: center;
+}
+
+.author-div > p {
+    font-size: 0.8rem;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#container-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+    height: 35.6vh;
+    background-color: var(--main-background);
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#register-text {
+    text-align: justify;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Padauk', sans-serif;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1.5rem;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgb(162, 162, 162);
+    z-index: 1000;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#inputs {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding-bottom: 0.8rem;
+}
+
+.column {
+    width: 40%;
+    padding-right: 1.2rem;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px 5px 0px;
+}
+
+.form-div > label {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+input {
+    border: solid 1px rgba(0, 0, 0, 0.276);
+    border-radius: 2px;
+    height: 1.4rem;
+    background-color: rgb(250, 250, 250);
+}
+
+input:focus {
+    border: solid 1px var(--side-div-title);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.827);
+    background-color: white;
+}
+
+input:invalid {
+    border: solid 1px rgba(255, 0, 0, 0.73);
+}
+
+#required {
+    text-align: right;
+}
+
+#submit-btn {
+    text-decoration: none;
+    background-color: var(--side-div-title);
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    width: auto;
+    height: auto;
+    border: none;
+    box-shadow: 0px 1px 3px rgba(165, 104, 0, 0.827);
+}
+
+#container-bottom {
+    padding-left: 1rem;
+    background-color: var(--main-background);
+}
+
+#container-bottom > p {
+    font-size: 0.9rem;
+}
+
+#container-bottom a {
+    text-decoration: underline;
+    color: var(--side-div-title);
+}
+
+#container-bottom a:visited {
+    text-decoration: underline;
+    color: var(--side-div-title);
+}
